@@ -1329,6 +1329,57 @@ a {
   }
 }
 
+/* ===== QR LINK / OVERLAY ===== */
+.cta-qr-hint {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--gray);
+  margin-bottom: 12px;
+  letter-spacing: 0.03em;
+}
+
+.cta-qr-link {
+  display: block;
+  text-decoration: none;
+  position: relative;
+}
+
+.cta-qr-link .cta-qr-frame {
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.cta-qr-link:hover .cta-qr-frame,
+.cta-qr-link:focus .cta-qr-frame {
+  transform: scale(1.04);
+  box-shadow: 0 6px 28px rgba(245, 196, 0, 0.35);
+  outline: 2px solid var(--yellow);
+  outline-offset: 2px;
+}
+
+.cta-qr-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  color: var(--yellow);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.cta-qr-link:hover .cta-qr-overlay,
+.cta-qr-link:focus .cta-qr-overlay {
+  opacity: 1;
+}
+
 /* ===== FOOTER ===== */
 .footer {
   background: var(--black);
