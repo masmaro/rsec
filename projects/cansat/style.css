@@ -1283,6 +1283,7 @@ a {
 }
 
 .cta-qr-frame {
+  position: relative;
   width: 100%;
   aspect-ratio: 1 / 1;
   max-width: 200px;
@@ -1322,6 +1323,52 @@ a {
 .cta-qr-desc {
   font-size: 0.82rem;
   color: var(--white-faint);
+}
+
+/* QR hint text */
+.cta-qr-hint {
+  font-size: 0.82rem;
+  color: var(--white-faint);
+  text-align: center;
+  padding: 6px 12px;
+  border: 1px dashed rgba(245,196,0,0.3);
+  border-radius: var(--radius-sm);
+  background: rgba(245,196,0,0.04);
+  letter-spacing: 0.02em;
+}
+
+/* QR link wrapper */
+.cta-qr-link {
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* QR overlay on hover */
+.cta-qr-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(245,196,0,0.85);
+  color: #0A0A0F;
+  font-weight: 700;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  letter-spacing: 0.05em;
+}
+
+.cta-qr-link:hover .cta-qr-overlay,
+.cta-qr-link:focus .cta-qr-overlay {
+  opacity: 1;
+}
+
+.cta-qr-link:hover .cta-qr-frame,
+.cta-qr-link:focus .cta-qr-frame {
+  box-shadow: 0 0 0 3px var(--yellow), 0 4px 20px rgba(245,196,0,0.3);
 }
 
 @media (min-width: 600px) {
